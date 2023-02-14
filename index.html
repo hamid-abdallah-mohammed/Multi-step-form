@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="/style.css">
+  <title>Frontend Mentor | Multi-step form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="steps">
+      <!-- step 1 -->
+      <div class="step-1 step">
+        <button class="active switch_1">1</button>
+        <div class="select__plan">
+          <p  class="hide">step 1</p>
+          <h3 class="hide">select plan</h3>
+        </div>
+      </div>
+      <!-- step 2 -->
+      <div class="step-2 step">
+        <button class="switch_2">2</button>
+        <div class="select__plan">
+          <p class="hide">step 2</p>
+          <h3 class="hide">select plan</h3>
+        </div>
+      </div>
+      <!-- step 1 -->
+      <div class="step-3 step">
+        <button class="switch_3">3</button>
+        <div class="select__plan"> 
+          <p class="hide">step 3</p>
+          <h3 class="hide"> Add-ons</h3>
+        </div>
+      </div>
+      <!-- step 1 -->
+      <div class="step-4 step">
+        <button class="switch_4">4</button>
+        <div class="select__plan">
+          <p class="hide">step 4</p>
+          <h3 class="hide"> Summary</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="forms">
+      <!-- form 1 -->
+      <div class="form-1 form">
+        <div class="desc">
+          <h1>Personal info</h1>
+          <p> Please provide your name, email address, and phone number.</p>
+        </div>
+
+        <div class="inputs">
+          <div>
+            <label for="">Name</label>
+            <input type="text" id="name" name="name" placeholder="e.g. Stephen King" class="name">
+          </div>
+          <div>
+            <label for="">Email Address</label>
+            <input type="email" name="email" id="email" placeholder="e.g. stephenking@lorem.com" class="email">
+          </div>
+          <div>
+            <label for="">Phone Number</label>
+            <input type="number" name="number" id="number" placeholder=" e.g. +1 234 567 890">
+          </div>
+        </div>
+         <div class="btn">
+          <button class="btn-next" onclick="formOne()">Next Step</button>
+         </div>
+      </div>
+      <!-- form 2 -->
+      <div class="form-2 form">
+        <div class="desc">
+          <h1>Select your plan</h1>
+          <p> You have the option of monthly or yearly billing.</p>
+        </div>
+
+        
+          <div class="plans">
+             <div class="plan">
+              <div> <img src="/assets/images/icon-arcade.svg" alt="arcade"></div>
+               <p>
+                <span>Arcade</span>
+                <br>
+                 <span>$9/mo</span>
+               </p>
+             </div>
+             <div class="plan">
+              <div><img src="/assets/images/icon-advanced.svg" alt="Advanced"></div>
+              <p>
+                <span>Advanced</span>
+                <br>
+                <span>$12/mo</span>
+              </p>
+             </div>
+             <div class="plan">
+              <div><img src="/assets/images/icon-pro.svg" alt=""></div>
+              <p>
+                <span>Pro</span>
+                <br>
+                <span>$15/mo</span>
+              </p>
+             </div>
+
+          </div>
+          <div class="toggle">
+            <!-- mo -->
+            <label for="">Monthly</label>
+            <div class="toggle-btn">
+              <input type="checkbox" name="" id="checkbox" class="checkbox">
+              <label for="checkbox"  class="sub" id="sub">
+                <div class="circle"></div>
+              </label>
+            </div>
+            <!-- y -->
+            <label for="">Yearly</label>
+          </div>
+         <div class="btns">
+          <button class="btn-back" onclick="backTow()">Go Back</button>
+          <button class="btn-next" onclick="formTow()">Next Step</button>
+         </div>
+      </div>
+      <!-- form 3 -->
+      <div class="form-3 form">
+        <div class="desc">
+          <h1>Pick add-ons</h1>
+          <p> Add-ons help enhance your gaming experience.</p>
+        </div>
+
+         <div class="boxes">
+           <div class="box">
+             <div class="test"><input type="checkbox" checked name="" id="checked" class="checkit"></div>
+             <div class="info">
+              <p class="title"> Online service</p>
+              <p class="sub_title">Access to multiplayer games</p>
+             </div>
+              <div><p class="mo">+$1/mo</p></div>
+           </div>
+           <div class="box">
+            <div><input type="checkbox" checked name="" id="checked" class="checkit"></div>
+            <div class="info">
+             <p class="title">Larger storage</p>
+             <p class="sub_title">Extra 1TB of cloud save</p>
+            </div>
+             <div><p class="mo">+$2/mo</p></div>
+           </div>
+           <div class="box"><div><input type="checkbox" name="" id="" class="checkit"></div>
+           <div class="info">
+            <p class="title">Customizable Profile</p>
+            <p class="sub_title">Custom theme on your profile</p>
+           </div>
+            <div><p class="mo">+$2/mo</p></div>
+
+           </div>
+         </div>
+       
+         <div class="btns">
+          <button class="btn-back" onclick="backThree()">Go Back</button>
+          <button class="btn-next"  onclick="formThree()">Next Step</button>
+         </div>
+      </div>
+<!-- form 4 -->
+      <div class="form-4 form">
+        <div class="desc">
+          <h1> Finishing up</h1>
+          <p>Double-check everything looks OK before confirming.</p>
+        </div>
+
+           <div class="checking">
+             <div class="check" >
+               <p >
+                <span class="higlight">Arcade (Monthly)</span>
+                <br>
+                <span class="gray underline">changed</span>
+               </p>
+               <p class="higlight">$9/mo</p>
+             </div>
+             <hr>
+             <div class="check">
+              <p class="gray">
+                Online service
+              </p>
+               <p class="higlight">+1/mo</p>
+             </div>
+             <div class="check">
+              <p class="gray ">Larger storage</p>
+              <p class="higlight">+2/mo</p>
+             </div>
+           </div>
+           <div class="total">
+             <p> Total (per month/year)</p>
+             <p>+$12/mo</p>
+           </div>
+         <div class="btns">
+          <button class="btn-back" onclick="backFour()">Go Back</button>
+          <button class="btn-next" onclick="formFour()">Confirm </button>
+         </div>
+      </div>
+        <div class="message">
+           <div><img src="/assets/images/icon-thank-you.svg" alt="Thanks"></div>
+           <div><h1>Thank you!</h1></div>
+           <div><p>Thanks for confirming your subscription! We hope you have fun
+            using our platform. If you ever need support, please feel free
+            to email us at abom65660@gmail.com</p></div>
+        </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="#">Your Name Here</a>.
+      </div> -->
+
+  <script src="/app.js"></script>
+</body>
+
+</html>
